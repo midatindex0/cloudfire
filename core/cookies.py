@@ -1,4 +1,5 @@
 from typing import List
+from urllib.parse import urlparse
 
 from aioredis import Redis
 from playwright.async_api import Cookie
@@ -22,8 +23,9 @@ class CookieManager:
                     self.cookie_map[domain][cookie["name"]] = cookie["value"]
 
     async def get_cookies(self, domain: str):
+        base = urlparse(domain).netloc
         if not self.redis:
-            return self.cookie_map.get(domain)
+            return self.cookie_map.get(base)
 
     async def get_all_cookies(self):
         if not self.redis:
