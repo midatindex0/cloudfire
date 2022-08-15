@@ -24,7 +24,7 @@ async def config():
         "Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0"
     )
     app.state.browser = await (
-        await app.state.pwsession.firefox.launch(headless=False)
+        await app.state.pwsession.firefox.launch(headless=True)
     ).new_context(user_agent=app.state.user_agent)
     app.state.httpsession = ClientSession()
     app.state.cookie_manager = cookies.CookieManager()
