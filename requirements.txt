@@ -2,3 +2,5 @@ aiohttp
 fastapi
 uvicorn
 playwright
+bs4
+aioredis
