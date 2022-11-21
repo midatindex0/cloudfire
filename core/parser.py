@@ -12,4 +12,4 @@ def try_json(content: str):
         json.loads(soup.text)
         return Content(jsonable=True, content=soup.text)
     except json.JSONDecodeError:
-        return Content(jsonable=False, content=soup.text)
+        return Content(jsonable=False, content=soup.prettify())
