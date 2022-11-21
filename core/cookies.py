@@ -1,8 +1,9 @@
 from typing import List
 from urllib.parse import urlparse
 
-from aioredis import Redis
+from redis.asyncio import Redis
 from playwright.async_api import Cookie
+
 
 class CookieManager:
     def __init__(self, redis: Redis = None) -> None:
