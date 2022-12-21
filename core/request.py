@@ -33,7 +33,7 @@ class RequestManager:
         page = await self.browser.new_page()
         await page.goto(url)
         async with page.expect_response(url) as res_info:
-            await page.wait_for_selector("h2#cf-challenge-running", state="detached")
+            await page.wait_for_selector("h2#challenge-running", state="detached")
             await page.wait_for_load_state("domcontentloaded")
         status = (await res_info.value).status
         cookies = await page.context.cookies(url)
