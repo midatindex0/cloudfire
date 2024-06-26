@@ -1,6 +1,8 @@
+**Doesn't work right now**
+
 # Cloudfire
 
-Cloudfire is a reverse proxy to bypass cloudflare's javascript challenge (I'm under attack mode) using playwright.
+Cloudfire is a proxy to bypass cloudflare's javascript challenge (I'm under attack mode) using playwright.
 
 ## How it works
 
